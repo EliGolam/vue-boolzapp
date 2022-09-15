@@ -133,13 +133,13 @@
                             <!-- Contact Profile picture -->
                             <img 
                                 :src="getProfilePicturePath(person)" 
-                                alt="Michele" 
+                                :alt="getProfilePictureAlt(person)" 
                                 class="img-fluid rounded-circle"
                             />
                         </div>
                         <div class="col">
-                            <h4>Michele</h4>
-                            <p class="last-message">Test</p>
+                            <h4>{{ person.name }}</h4>
+                            <p class="last-message">{{ getLastMessage(person) }}</p>
                         </div>
                         
                         <div class="col-3 d-flex align-items-end align-self-start justify-content-end">

@@ -2,6 +2,10 @@
 
 ## Versions
 
+### 0.0.7: Script: Added most recent message preview
+
+* app.js Now correctly loads the most recent message for each chat
+
 ### 0.0.6: Script: Implemented Vue creating DOM elements: Contacts
 
 ### 0.0.5: Script: Added Data and initialized Vue App
