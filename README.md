@@ -1,4 +1,7 @@
-# html-css-personal-reset
+# BoolZapp
 
+## Versions
 
-A template to start a basic website. 
+### 0.0.2: Creating base HTML document
+
+### 0.0.1: Setup

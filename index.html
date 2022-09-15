@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- METADATA -->
 <head>
-    <title>Title</title>
+    <title>Boolzapp</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <meta charset="UTF-8">
@@ -42,6 +42,59 @@
 
 <!-- BODY -->
 <body>
-    
+    <header>
+        <div class="container">
+            <h1 class="visually-hidden">Boolzapp</h1>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="app" class="ms_main container">
+        <!--#region Contacts Section -->
+        <section id="contacts" class="row">
+            <header class="col-12 p-0">
+                <div class="p-2 bg-light">
+                    <!-- Profile picture -->
+                    <h2 id="username" class="mb-0">Sofia</h2>
+                </div>
+            </header>
+
+
+            <article id="notification" class="col-12 p-0">
+                <h3>Receive Notifications</h3>
+            </article>
+
+
+            <form action="#" id="searchContact-form" class="col-12 p-0">
+                <input type="search" name="searchContacts" id="searchContacts" class="w-100 border-0" placeholder="Search or start a new chat">
+            </form>
+
+            <h3 class="visually-hidden">List of contacts</h3>
+            <ul id="contactList" class="col-12 p-0">
+                <li class="ms_contact row">
+                    <article>
+                        <div class="col-3">
+                            <!-- Contact Profile picture -->
+                        </div>
+                        <div class="col-6">
+                            <h4>Michele</h4>
+                            <p class="last-message">Test</p>
+                        </div>
+                        
+                        <div class="col-3">
+                            <!-- Last message time -->
+                        </div>
+                    </article>
+                </li>
+            </ul>
+
+        </section>
+        <!--#endregion Contacts Section -->
+
+
+
+        <!--#region Messaging Section -->
+        <!--#endregion Messaging Section -->
+    </main>
 </body>
 </html>
