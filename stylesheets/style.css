@@ -10,11 +10,14 @@ body {
 /* --------------------------------------------------------------------------------- */
 /*#region UTILITIES */ 
 /* ------------------------------------------ */
-/*#region aesthetic elements */
 .flow > * + * {
     margin-top: var(--flow-spacing);
 }
-/*#endregion aesthetic elements */
+
+.ms_profile-picture.col {
+    max-width: 75px;
+}
+
 
 /*#endregion UTILITIES */
 /* --------------------------------------------------------------------------------- */
@@ -22,13 +25,20 @@ body {
 
 /* --------------------------------------------------------------------------------- */
 /*#region COMPOSITION */
-
+.ms_messaging-section {
+    min-height: 100%;
+}
 /*#endregion COMPOSITION */
 /* --------------------------------------------------------------------------------- */
 
 
 /* --------------------------------------------------------------------------------- */
 /*#region BLOCKS: component specific rules */
+
+.ms_messages-content {
+    height: 100%;
+    background-image: url('../assets/img/mine.jpg');
+}
 /*#endregion BLOCKS: component specific rules */
 /* --------------------------------------------------------------------------------- */
 

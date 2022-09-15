@@ -54,110 +54,149 @@
     </header>
 
     <!-- MAIN -->
-    <main id="app" class="ms_main container">
-        <!--#region Contacts Section -->
-        <section id="contacts" class="row">
-            <!--#region User -->
-            <header class="col-12 p-0">
-                
-                <div class="row bg-light m-0 align-items-center py-1">
-                    <!-- Profile Picture -->
-                    <div class="col-2 col-md-1">
-                        <img src="./assets/img/avatar_io.jpg" alt="My Profile Picture" class="img-fluid rounded-circle">
-                    </div>
+    <main id="app" class="ms_main container-fluid container-md">
+        <div class="row">
 
-                    <!-- User Name -->
-                    <div class="col-6">
-                        <h2 id="username" class="mb-0">Sofia</h2>
-                    </div>
+            <!--#region Contacts Section -->
+            <section id="contacts" class="col-12 col-md-5 col-lg-4">
+                <div class="row flex-column position-relative">
 
-                    <!-- User Options -->
-                    <div class="col-4 d-flex justify-content-end gap-3">
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
-                </div>
-                
-            </header>
-            <!--#endregion User -->
+                    <!--#region User -->
+                    <header class="col-12 p-0">
+                        
+                        <div class="row bg-light m-0 align-items-center py-1">
+                            <!-- Profile Picture -->
+                            <div class="ms_profile-picture col">
+                                <img src="./assets/img/avatar_io.jpg" alt="My Profile Picture" class="img-fluid rounded-circle">
+                            </div>
 
+                            <!-- User Name -->
+                            <div class="col">
+                                <h2 id="username" class="mb-0">Sofia</h2>
+                            </div>
 
-            <!--#region Notifications Alert -->
-            <article id="notificationAlert" class="col-12 p-0">
-
-                <div class="row bg-light m-0 align-items-center py-1">
-                    <!-- Notification Icon -->
-                    <div class="col-2 col-md-1">
-
-                    </div>
-
-                    <!-- Alert Body -->
-                    <div class="col">
-                        <h3 class="fs-6">Receive Notifications for new messages</h3>
-                        <a href="#">Activate Desktop Notifications</a>
-                    </div>
-                </div>
-                
-            </article>
-            <!--#endregion Notifications Alert -->
-
-
-            <!--#region Search Bar -->
-            <form action="#" id="searchContact-form" class="col-12 p-0">
-
-                <div class="row bg-light m-0 align-items-center py-1">
-                    <!-- Search Icon -->
-                    <div class="col-2 col-md-1">
-
-                    </div>
-
-                    <!-- Search Bar -->
-                    <div class="col">
-                        <input type="search" name="searchContacts" id="searchContacts" class="w-100 border-0 py-2 px-2" placeholder="Search or start a new chat">
-                    </div>
-                </div>
-
-            </form>
-            <!--#endregion Search Bar -->
-
-
-            <!--#region Contacts -->
-            <h3 class="visually-hidden">List of contacts</h3>
-            <ul id="contactList" class="col-12 p-0">
-                <li class="ms_contact"
-                    v-for="(person, index) in contacts"
-                >
-                    <article class="row m-0 align-items-center py-1">
-                        <div class="col-2 col-md-1">
-                            <!-- Contact Profile picture -->
-                            <img 
-                                :src="getProfilePicturePath(person)" 
-                                :alt="getProfilePictureAlt(person)" 
-                                class="img-fluid rounded-circle"
-                            />
-                        </div>
-                        <div class="col">
-                            <h4>{{ person.name }}</h4>
-                            <p class="last-message">{{ getLastMessage(person) }}</p>
+                            <!-- User Options -->
+                            <div class="col-4 d-flex justify-content-end gap-3">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
                         </div>
                         
-                        <div class="col-3 d-flex align-items-end align-self-start justify-content-end">
-                            <!-- Last message time -->
-                            <p>{{ getLastMessageTime(person) }}</p>
+                    </header>
+                    <!--#endregion User -->
+
+
+                    <!--#region Notifications Alert -->
+                    <article id="notificationAlert" class="col-12 p-0">
+
+                        <div class="row bg-light m-0 align-items-center py-1">
+                            <!-- Notification Icon -->
+                            <div class="col-2 col-md-1">
+
+                            </div>
+
+                            <!-- Alert Body -->
+                            <div class="col">
+                                <h3 class="fs-6">Receive Notifications for new messages</h3>
+                                <a href="#">Activate Desktop Notifications</a>
+                            </div>
                         </div>
+                        
                     </article>
-                </li>
-            </ul>
-            <!--#endregion Contacts -->
-
-        </section>
-        <!--#endregion Contacts Section -->
+                    <!--#endregion Notifications Alert -->
 
 
+                    <!--#region Search Bar -->
+                    <form action="#" id="searchContact-form" class="col-12 p-0">
 
-        <!--#region Messaging Section -->
-        <!--#endregion Messaging Section -->
+                        <div class="row bg-light m-0 align-items-center py-1">
+                            <!-- Search Icon -->
+                            <div class="col-2 col-md-1">
+
+                            </div>
+
+                            <!-- Search Bar -->
+                            <div class="col">
+                                <input type="search" name="searchContacts" id="searchContacts" class="w-100 border-0 py-2 px-2" placeholder="Search or start a new chat">
+                            </div>
+                        </div>
+
+                    </form>
+                    <!--#endregion Search Bar -->
+
+
+                    <!--#region Contacts -->
+                    <h3 class="visually-hidden">List of contacts</h3>
+                    <ul id="contactList" class="col-12 p-0">
+                        <li class="ms_contact"
+                            v-for="(person, index) in contacts"
+                        >
+                            <article class="row m-0 align-items-center py-1">
+                                <div class="ms_profile-picture col">
+                                    <!-- Contact Profile picture -->
+                                    <img 
+                                        :src="getProfilePicturePath(person)" 
+                                        :alt="getProfilePictureAlt(person)" 
+                                        class="img-fluid rounded-circle"
+                                    />
+                                </div>
+                                <div class="col">
+                                    <h4>{{ person.name }}</h4>
+                                    <p class="last-message">{{ getLastMessage(person) }}</p>
+                                </div>
+                                
+                                <div class="col-3 d-flex align-items-end align-self-start justify-content-end">
+                                    <!-- Last message time -->
+                                    <p>{{ getLastMessageTime(person) }}</p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                    <!--#endregion Contacts -->
+                </div>
+                <!--#endregion Contacts Section -->
+            </section>
+
+            <!--#region Messaging Section -->
+            <section id="messaging" class="ms_messaging-section col-12 col-md col-lg p-0">
+                <div class="row flex-column h-100 position-relative">
+
+                    <!--#region Active Contact Info -->
+                    <header class="col-12 position-absolute top-0"> 
+                        <div class="row bg-light m-0 align-items-center py-1">
+                            <!-- Profile Picture -->
+                            <div class="ms_profile-picture col">
+                                <img src="./assets/img/avatar_io.jpg" alt="My Profile Picture" class="img-fluid rounded-circle">
+                            </div>
+
+                            <!-- Active Contact Name -->
+                            <div class="col">
+                                <h2 id="contactName" class="mb-0">Sofia</h2>
+                            </div>
+
+                            <!-- Active Contact Options -->
+                            <div class="col-4 d-flex justify-content-end gap-3">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    </header>
+                    <!--#endregion Active Contact Info -->
+
+                    <!-- Messages Container -->
+                    <div class="ms_messages-container col-12 h-100">
+                        <div class="ms_messages-content row bg-light m-0 align-items-center py-1"></div>
+                    </div>
+
+                    <!-- Texting Field -->
+                    </div>
+                    
+
+            </section>
+            <!--#endregion Messaging Section -->
+        </div>
     </main>
 </body>
 </html>

@@ -6,6 +6,8 @@ const app = new Vue({
 
     data: {
         contacts: contactsData,
+        
+        activeChat: undefined,
     },
 
     // METHODS
