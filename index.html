@@ -52,8 +52,9 @@
     <main id="app" class="ms_main container">
         <!--#region Contacts Section -->
         <section id="contacts" class="row">
+            <!--#region User -->
             <header class="col-12 p-0">
-                <!-- User -->
+                
                 <div class="row bg-light m-0 align-items-center py-1">
                     <!-- Profile Picture -->
                     <div class="col-2 col-md-1">
@@ -74,17 +75,49 @@
                 </div>
                 
             </header>
+            <!--#endregion User -->
 
 
-            <article id="notification" class="col-12 p-0">
-                <h3>Receive Notifications</h3>
+            <!--#region Notifications Alert -->
+            <article id="notificationAlert" class="col-12 p-0">
+
+                <div class="row bg-light m-0 align-items-center py-1">
+                    <!-- Notification Icon -->
+                    <div class="col-2 col-md-1">
+
+                    </div>
+
+                    <!-- Alert Body -->
+                    <div class="col">
+                        <h3 class="fs-6">Receive Notifications for new messages</h3>
+                        <a href="#">Activate Desktop Notifications</a>
+                    </div>
+                </div>
+                
             </article>
+            <!--#endregion Notifications Alert -->
 
 
+            <!--#region Search Bar -->
             <form action="#" id="searchContact-form" class="col-12 p-0">
-                <input type="search" name="searchContacts" id="searchContacts" class="w-100 border-0" placeholder="Search or start a new chat">
-            </form>
 
+                <div class="row bg-light m-0 align-items-center py-1">
+                    <!-- Search Icon -->
+                    <div class="col-2 col-md-1">
+
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="col">
+                        <input type="search" name="searchContacts" id="searchContacts" class="w-100 border-0 py-2 px-2" placeholder="Search or start a new chat">
+                    </div>
+                </div>
+
+            </form>
+            <!--#endregion Search Bar -->
+
+
+            <!--#region Contacts -->
             <h3 class="visually-hidden">List of contacts</h3>
             <ul id="contactList" class="col-12 p-0">
                 <li class="ms_contact row m-0">
@@ -103,6 +136,7 @@
                     </article>
                 </li>
             </ul>
+            <!--#endregion Contacts -->
 
         </section>
         <!--#endregion Contacts Section -->
