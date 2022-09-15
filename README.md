@@ -2,6 +2,8 @@
 
 ## Versions
 
+### 0.0.10: Minor Layout Fix
+
 ### 0.0.9: Create messaging section
 
 ### 0.0.8: Script: Added time of last message in the preview
