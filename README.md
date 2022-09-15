@@ -2,6 +2,8 @@
 
 ## Versions
 
+### 0.0.8: Script: Added time of last message in the preview
+
 ### 0.0.7: Script: Added most recent message preview
 
 * app.js Now correctly loads the most recent message for each chat

@@ -21,10 +21,23 @@ const app = new Vue({
 
         getLastMessage(contact) {
             let messageAmount = contact.messages.length;
-            console.log('DEBUG - number of messages:', messageAmount);
-            return contact.messages[messageAmount - 1].message;
+            let sender = contact.messages[messageAmount - 1].status === 'sent' ? 'You: ' : '';
+            let previewMessage = `${sender}${contact.messages[messageAmount - 1].message}`;
+            
+            return previewMessage;
+        }, 
+
+        getLastMessageTime(contact) {
+            let messageAmount = contact.messages.length;
+            return this.getMessageTime(contact, messageAmount - 1); 
+        }, 
+
+        getMessageTime(contact, messageIdx) {
+            let messageTime = contact.messages[messageIdx].date.split(' ');
+
+            return messageTime[1].slice(0, -3);
         }
-    },
+     },
 
     // MOUNTED
     mounted () {
