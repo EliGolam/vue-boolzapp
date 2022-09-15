@@ -5,6 +5,7 @@ console.log('SCRIPT - data.js: Loaded!');
 // Profile pictures
 const PROF_IMG_PREFIX = 'avatar';
 const PROF_IMG_FORMAT = '.jpg';
+const PROF_IMG_PATH = './assets/img/'
 
 
 

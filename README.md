@@ -2,6 +2,8 @@
 
 ## Versions
 
+### 0.0.6: Script: Implemented Vue creating DOM elements: Contacts
+
 ### 0.0.5: Script: Added Data and initialized Vue App
 
 ### 0.0.4: HTML: created alert and search layout

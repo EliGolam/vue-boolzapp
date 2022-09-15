@@ -125,11 +125,17 @@
             <!--#region Contacts -->
             <h3 class="visually-hidden">List of contacts</h3>
             <ul id="contactList" class="col-12 p-0">
-                <li class="ms_contact">
+                <li class="ms_contact"
+                    v-for="(person, index) in contacts"
+                >
                     <article class="row m-0 align-items-center py-1">
                         <div class="col-2 col-md-1">
                             <!-- Contact Profile picture -->
-                            <img src="./assets/img/avatar_1.jpg" alt="Michele" class="img-fluid rounded-circle">
+                            <img 
+                                :src="getProfilePicturePath(person)" 
+                                alt="Michele" 
+                                class="img-fluid rounded-circle"
+                            />
                         </div>
                         <div class="col">
                             <h4>Michele</h4>
