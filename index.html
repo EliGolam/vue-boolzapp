@@ -53,10 +53,26 @@
         <!--#region Contacts Section -->
         <section id="contacts" class="row">
             <header class="col-12 p-0">
-                <div class="p-2 bg-light">
-                    <!-- Profile picture -->
-                    <h2 id="username" class="mb-0">Sofia</h2>
+                <!-- User -->
+                <div class="row bg-light m-0 align-items-center py-1">
+                    <!-- Profile Picture -->
+                    <div class="col-2 col-md-1">
+                        <img src="./assets/img/avatar_io.jpg" alt="My Profile Picture" class="img-fluid rounded-circle">
+                    </div>
+
+                    <!-- User Name -->
+                    <div class="col-6">
+                        <h2 id="username" class="mb-0">Sofia</h2>
+                    </div>
+
+                    <!-- User Options -->
+                    <div class="col-4 d-flex justify-content-end gap-3">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
                 </div>
+                
             </header>
 
 
@@ -71,7 +87,7 @@
 
             <h3 class="visually-hidden">List of contacts</h3>
             <ul id="contactList" class="col-12 p-0">
-                <li class="ms_contact row">
+                <li class="ms_contact row m-0">
                     <article>
                         <div class="col-3">
                             <!-- Contact Profile picture -->
