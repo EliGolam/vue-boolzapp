@@ -18,6 +18,7 @@ const app = new Vue({
         activeChat: 0,
         textBox: '',
         searchBox: '',
+        activeOption: undefined,
     },
 
     // METHODS
@@ -64,6 +65,7 @@ const app = new Vue({
             return index === messages.length - 1 ? true : false;
         },
 
+
         getPreviewMessage(contact) {
             let messageAmount = contact.messages.length;
             if (messageAmount === 0) return '';
@@ -88,6 +90,20 @@ const app = new Vue({
             activeContact.messages.splice(index, 1);
         },
 
+        showOptions(element) {
+            if (this.activeOption !== undefined) {
+                if(this.activeOption !== element) {
+                    this.activeOption.options = false;
+                }
+            }
+            this.activeOption = element;
+            this.activeOption.options = !element.options;
+        },
+
+        closeOption() {
+            this.activeOption.options = false;
+            
+        },
 
         // DOM utilities
         getProfilePicturePath(contact) {
@@ -103,7 +119,7 @@ const app = new Vue({
             return messageTime[1].slice(0, -3);
         }, 
 
-        messageProperties (message, index) {
+        messageProperties (message) {
             const classes = [message.status];
             return classes;
         }, 

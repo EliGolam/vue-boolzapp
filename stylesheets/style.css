@@ -222,12 +222,25 @@ main {
 
 .message-options {
     position: absolute;
-        bottom: -.9rem;
-        right: .8rem;
+        top: 1.3rem;
+        right: 1.3rem;
         z-index: 2;
 
-    background-color: var(--clr-white);
+    background-color: var(--clr-neo-light);
     padding: .3em;
+    border-radius: .2em;
+    overflow: hidden;
+}
+
+.option-item {
+    padding: .5em;
+    background-color: var(--clr-white);
+
+    border-radius: 2rem;
+}
+
+.option-item:hover {
+    background-color: var(--clr-neo-accent);
 }
 
 .send-text {

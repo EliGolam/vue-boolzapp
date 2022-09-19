@@ -47,7 +47,7 @@
 </head>
 
 <!-- BODY -->
-<body class="debug flex">
+<body class="flex">
     <header>
         <h1 class="title">A Simple Texting WebApp!</h1>
     </header>
@@ -122,7 +122,9 @@
 
 
             <!--#region chat -->
-            <section id="chat" class="chat-section app-section flex">
+            <section id="chat" class="chat-section app-section flex"
+                
+            >
                 <header class="contact-info flex">
                     <div class="profile-picture">
                         <img class="img-fluid" :src="getActiveChat('img')" :alt="getActiveChat('alt')" />
@@ -142,22 +144,48 @@
                         v-for="(messageData, index) in getActiveChat('messages')"
                         class="message"
                         :class="messageProperties(messageData, index)"
+                        v-on:mouseleave="closeOption()"
                     >
                         <p>{{ messageData.message }}</p>
 
-                        <div class="dropdown message-open-options cursor-click">
+                        <!-- <div class="dropdown message-open-options cursor-click"
+                            v-show="false"
+                        >
                             <button class="btn bg-transparent border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-ellipsis"></i>
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#"
+                                <li><a class="dropdown-item" href="#"
+                                    @click="removeMessage(index)"
+                                >
+                                    Delete Message
+                                </a></li>
+                            </ul>
+                        </div> -->
+
+                        <div class="message-open-options cursor-click">
+                            <i class="fa-solid fa-ellipsis"
+                                @click="showOptions(messageData)"
+                            ></i>
+                        </div>
+                    
+                        <ul class="message-options"
+                            v-if="messageData.options"
+                            v-on:mouseleave="closeOption()"
+                        >
+                            <li class="cursor-click option-item"
                                 @click="removeMessage(index)"
                             >
-                                Delete Message
-                            </a></li>
-
-                            </ul>
-                        </div>
+                            Delete Message</li>
+                            <li class="cursor-click option-item"
+                                @click="removeMessage(index)"
+                            >
+                            Delete Message</li>
+                            <li class="cursor-click option-item"
+                                @click="removeMessage(index)"
+                            >
+                            Delete Message</li>
+                        </ul>
     
                     </div>
                 </div>

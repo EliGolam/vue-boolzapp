@@ -2,6 +2,10 @@
 
 ## Versions
 
+### 0.1.1: Fixed message option overlay
+
+* Now the options disappear when the mouse exits the containers
+
 ### 0.1: Fixed Neo-UI
 
 * To Add: proper Whatsapp UI
