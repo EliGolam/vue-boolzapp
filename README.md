@@ -2,6 +2,15 @@
 
 ## Versions
 
+### 0.1: Fixed Neo-UI
+
+* To Add: proper Whatsapp UI
+
+### 0.0.11: Added chat messages to show up depending on active chat
+
+* Switching between Chats can be done both with mouse click
+* Chat can be navigated with tab and activated with keyboard enter button
+
 ### 0.0.10: Minor Layout Fix
 
 ### 0.0.9: Create messaging section

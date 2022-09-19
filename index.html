@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- METADATA -->
 <head>
-    <title>Boolzapp</title>
+    <title>Title</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <meta charset="UTF-8">
@@ -19,9 +19,10 @@
     <!--#endregion FONTS -->
 
     <!--#region Stylesheets and Scripts -->
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
     <!-- VueJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
@@ -46,156 +47,134 @@
 </head>
 
 <!-- BODY -->
-<body>
+<body class="debug flex">
     <header>
-        <div class="container">
-            <h1 class="visually-hidden">Boolzapp</h1>
-        </div>
+        <h1 class="title">A Simple Texting WebApp!</h1>
     </header>
 
-    <!-- MAIN -->
-    <main id="app" class="ms_main container-fluid container-lg">
-        <div class="row">
+    <main>
+        <div id="app" class="app-container flex">
+            
+            <!--#region contact-list -->
+            <section id="contact-list" class="contact-section app-section flex">
+                <header class="user-header contact-info flex">
+                    <div class="profile-picture">
+                        <img class="img-fluid" src="./assets/img/avatar_io.jpg" alt="My Profile Picture">
+                    </div>
 
-            <!--#region Contacts Section -->
-            <section id="contacts" class="col-12 col-md-6 col-lg-4">
-                <div class="row flex-column position-relative">
+                    <h2 class="user">Sofia</h2>
 
-                    <!--#region User -->
-                    <header class="col-12 p-0">
-                        
-                        <div class="row bg-light m-0 align-items-center py-1">
-                            <!-- Profile Picture -->
-                            <div class="ms_profile-picture col">
-                                <img src="./assets/img/avatar_io.jpg" alt="My Profile Picture" class="img-fluid rounded-circle">
-                            </div>
+                    <!-- User Options -->
+                    <div class="section-header_options">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </header>
 
-                            <!-- User Name -->
-                            <div class="col">
-                                <h2 id="username" class="mb-0">Sofia</h2>
-                            </div>
+                <form action="#" class="search-form app-form flex">
+                    <input type="text" placeholder="Search or Create new Chat"
+                        class="search-contacts app-input"
+                        v-model="searchBox"
+                        @keyUp="searchChat()"
+                    />
+                </form>
 
-                            <!-- User Options -->
-                            <div class="col-4 d-flex justify-content-end gap-3">
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </div>
-                        </div>
-                        
-                    </header>
-                    <!--#endregion User -->
+                <h3 class="visually-hidden">List of contacts</h3>
+                <!-- Contacts -->
+                <ul class="contacts-container scroll-container cursor-click flex">
 
-
-                    <!--#region Notifications Alert -->
-                    <article id="notificationAlert" class="col-12 p-0">
-
-                        <div class="row bg-light m-0 align-items-center py-1">
-                            <!-- Notification Icon -->
-                            <div class="col-2 col-md-1">
-
-                            </div>
-
-                            <!-- Alert Body -->
-                            <div class="col">
-                                <h3 class="fs-6">Receive Notifications for new messages</h3>
-                                <a href="#">Activate Desktop Notifications</a>
-                            </div>
-                        </div>
-                        
-                    </article>
-                    <!--#endregion Notifications Alert -->
-
-
-                    <!--#region Search Bar -->
-                    <form action="#" id="searchContact-form" class="col-12 p-0">
-
-                        <div class="row bg-light m-0 align-items-center py-1">
-                            <!-- Search Icon -->
-                            <div class="col-2 col-md-1">
-
-                            </div>
-
-                            <!-- Search Bar -->
-                            <div class="col">
-                                <input type="search" name="searchContacts" id="searchContacts" class="w-100 border-0 py-2 px-2" placeholder="Search or start a new chat">
-                            </div>
-                        </div>
-
-                    </form>
-                    <!--#endregion Search Bar -->
-
-
-                    <!--#region Contacts -->
-                    <h3 class="visually-hidden">List of contacts</h3>
-                    <ul id="contactList" class="col-12 p-0">
-                        <li class="ms_contact"
-                            v-for="(person, index) in contacts"
+                    <li
+                        v-for="(person, index) in contacts"
+                        class="contact-wrapper"
+                        v-show="person.visible"
+                    >
+                        <article 
+                            class="contact contact-info flex"
+                            :class="{ active : index === activeChat }"
+                            :tabindex="0"
+                            @click="activeChat = index"
+                            @keyUp.enter="activeChat = index"
                         >
-                            <article class="row m-0 align-items-center py-1">
-                                <div class="ms_profile-picture col">
-                                    <!-- Contact Profile picture -->
-                                    <img 
-                                        :src="getProfilePicturePath(person)" 
-                                        :alt="getProfilePictureAlt(person)" 
-                                        class="img-fluid rounded-circle"
-                                    />
-                                </div>
-                                <div class="col">
-                                    <h4>{{ person.name }}</h4>
-                                    <p class="last-message">{{ getLastMessage(person) }}</p>
-                                </div>
-                                
-                                <div class="col-3 d-flex align-items-end align-self-start justify-content-end">
-                                    <!-- Last message time -->
-                                    <p>{{ getLastMessageTime(person) }}</p>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
-                    <!--#endregion Contacts -->
-                </div>
-                <!--#endregion Contacts Section -->
-            </section>
-
-            <!--#region Messaging Section -->
-            <section id="messaging" class="ms_messaging-section col-12 col-md p-0">
-                <div class="row flex-column h-100 position-relative">
-
-                    <!--#region Active Contact Info -->
-                    <header class="col-12 position-absolute top-0"> 
-                        <div class="row bg-light m-0 align-items-center py-1">
-                            <!-- Profile Picture -->
-                            <div class="ms_profile-picture col">
-                                <img src="./assets/img/avatar_io.jpg" alt="My Profile Picture" class="img-fluid rounded-circle">
+                            <div class="profile-picture">
+                                <!-- Contact Profile picture -->
+                                <img 
+                                    :src="getProfilePicturePath(person)" 
+                                    :alt="getProfilePictureAlt(person)" 
+                                    class="img-fluid"
+                                />
                             </div>
 
-                            <!-- Active Contact Name -->
-                            <div class="col">
-                                <h2 id="contactName" class="mb-0">Sofia</h2>
+                            <div class="contact-body">
+                                <h4>{{ person.name }}</h4>
+                                <p class="message-preview">{{ getPreviewMessage(person) }}</p>
                             </div>
 
-                            <!-- Active Contact Options -->
-                            <div class="col-4 d-flex justify-content-end gap-3">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-paperclip"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <div class="preview-time">
+                                <p>{{ getLastMessageTime(person) }}</p>
                             </div>
-                        </div>
-                    </header>
-                    <!--#endregion Active Contact Info -->
-
-                    <!-- Messages Container -->
-                    <div class="ms_messages-container col-12 h-100">
-                        <div class="ms_messages-content row bg-light m-0 align-items-center py-1"></div>
-                    </div>
-
-                    <!-- Texting Field -->
-                    </div>
+                        </article>
+                    </li>
                     
+                </ul>
+            </section>
+            <!--#endregion contact-list -->
+
+
+            <!--#region chat -->
+            <section id="chat" class="chat-section app-section flex">
+                <header class="contact-info flex">
+                    <div class="profile-picture">
+                        <img class="img-fluid" :src="getActiveChat('img')" :alt="getActiveChat('alt')" />
+                    </div>
+
+                    <h2>{{ getActiveChat('name') }}</h2>
+
+                    <div class="section-header_options">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </header>
+
+                <div class="messages-body scroll-container flex">
+                    <div 
+                        v-for="(messageData, index) in getActiveChat('messages')"
+                        class="message"
+                        :class="messageProperties(messageData, index)"
+                    >
+                        <p>{{ messageData.message }}</p>
+
+                        <div class="dropdown message-open-options cursor-click">
+                            <button class="btn bg-transparent border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#"
+                                @click="removeMessage(index)"
+                            >
+                                Delete Message
+                            </a></li>
+
+                            </ul>
+                        </div>
+    
+                    </div>
+                </div>
+
+                <footer>
+                    <form action="#" class="text-form app-form flex" @submit.prevent>
+                        <input type="text" placeholder="Send Text"
+                            v-model="textBox"
+                            class="send-text app-input"
+                            @keyUp.enter="sendText()"
+                        />
+                    </form>
+                </footer>
 
             </section>
-            <!--#endregion Messaging Section -->
+            <!--#endregion chat -->
+
         </div>
     </main>
 </body>
